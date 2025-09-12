@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tech Fest Registration Form</title>
+</head>
+<body>
+  <h1>Register for the College Tech Fest</h1>
+
+  <form action="/submit-registration" method="POST">
+
+    <div>
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+    </div>
+
+
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+    </div>
+
+
+    <div>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" min="16" max="40">
+    </div>
+
+  
+    <div>
+      <label>Gender:</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
+      <input type="radio" id="other" name="gender" value="other">
+      <label for="other">Other</label>
+    </div>
+
+ 
+    <div>
+      <label for="college">College Name:</label>
+      <input type="text" id="college" name="college">
+    </div>
+
+
+    <div>
+      <label for="course">Select Your Course:</label>
+      <select id="course" name="course">
+        <option value="btech">B.Tech</option>
+        <option value="bsc">B.Sc</option>
+        <option value="bca">BCA</option>
+        <option value="mba">MBA</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+ 
+    <div>
+      <label>Choose Events to Participate In:</label><br>
+      <input type="checkbox" id="coding" name="events" value="coding">
+      <label for="coding">Coding</label><br>
+      <input type="checkbox" id="robotics" name="events" value="robotics">
+      <label for="robotics">Robotics</label><br>
+      <input type="checkbox" id="quiz" name="events" value="quiz">
+      <label for="quiz">Tech Quiz</label><br>
+      <input type="checkbox" id="gaming" name="events" value="gaming">
+      <label for="gaming">Gaming</label>
+    </div>
+
+   
+    <div>
+      <label for="message">Why do you want to join?</label><br>
+      <textarea id="message" name="message" rows="4" cols="50" placeholder="Tell us more..."></textarea>
+    </div>
+    <div>
+      <button type="submit">Register</button>
+    </div>
+  </form>
+</body>
+</html>
