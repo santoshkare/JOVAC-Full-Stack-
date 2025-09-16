@@ -1,0 +1,28 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 150px);
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.item {
+  background-color: #73c713;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  border-radius: 8px;
+}
+
+.item-1 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.item-2 {
+  grid-column: 3 / 5;
+  grid-row: 1 / 3;
+}

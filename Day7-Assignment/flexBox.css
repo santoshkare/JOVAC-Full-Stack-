@@ -1,0 +1,26 @@
+.team-container{
+    width: 1000px;
+    margin: 50px auto;
+    display:flex;
+    justify-content:space-between;
+    gap: 20px;
+}
+.team-card{
+    padding: 15px;
+    background-color: aqua;
+    width: 200px;
+    border: solid;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+
+}
+
+.team-card:hover{
+    box-shadow: 0 4px 12px rgba(red, green, blue, alpha);
+}
+.team-card img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+}
