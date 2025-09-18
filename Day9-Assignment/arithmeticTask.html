@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function calculate(a, b, operation) {
+    return operation(a, b);
+}
+
+    function add(x,y){
+        return x+y;
+    }
+    function sub(x,y){
+        return x-y;
+    }
+    function multiply(x,y){
+        return x*y;
+    }
+    function divide(x,y){
+        return y!==0 ?x/y:"Cannot divide by zero"
+    }
+
+    console.log(calculate(5, 3, add));       
+
+    console.log(calculate(5, 3, sub));  
+
+    console.log(calculate(5, 3, multiply));   
+    console.log(calculate(5, 0, divide)); 
+</script>
+<body>
+    
+</body>
+</html>

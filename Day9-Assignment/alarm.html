@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    function setalarm(time, msg) {
+      const now = new Date();
+      const alarmTime = new Date(time);
+      const timeDiff = alarmTime - now;
+
+      if (timeDiff <= 0) {
+        alert("Alarm time must be in the future!");
+        return;
+      }
+
+      setTimeout(() => {
+        alert(msg);
+      }, timeDiff);
+    }
+
+    const futureTime = new Date(Date.now() + 10000);
+    setalarm(futureTime, "Time to stand UP!");
+  </script>
+</head>
+<body>
+  <h1>Alarm is Set</h1>
+</body>
+</html>

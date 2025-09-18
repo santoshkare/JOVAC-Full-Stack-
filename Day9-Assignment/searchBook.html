@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Search Book</title>
+</head>
+<body>
+  <script>
+    function searchBook(bookName, callback) {
+      console.log(`Searching for "${bookName}"...`);
+      setTimeout(function() {
+        const result = `Book "${bookName}" found in library database.`;
+        callback(result);
+      }, 2000);
+    }
+
+    function showResult(message) {
+      console.log("Search Result:", message);
+    }
+
+    searchBook("JavaScript Basics", showResult);
+  </script>
+</body>
+</html>
