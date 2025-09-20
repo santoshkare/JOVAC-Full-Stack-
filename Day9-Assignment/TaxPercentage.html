@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function totalAmount(amount,...taxes){
+        let totalTax=0;
+        for(let tax of taxes){
+            totalTax +=amount*(tax /100);
+        }
+        return amount +totalTax;
+    }
+    const result = totalAmount(3,12,18);
+    console.log(result);
+</script>
+<body>
+    
+</body>
+</html>

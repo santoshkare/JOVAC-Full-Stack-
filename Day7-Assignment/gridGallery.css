@@ -1,0 +1,15 @@
+.gallery-container{
+    width:900px;
+    margin: 50px auto;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(2,1fr);
+    gap: 10px;
+}
+.gallery-container img{
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border: 2px solid #0b0303;
+    box-shadow:inset;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <Script>
+        const numbers =[1,4,2,2,4,5,7,6,8,9,9,5,4,3,2,1];
+        const freq={};
+
+        let i=0;
+        while(i<numbers.length){
+            let num=numbers[i];
+            if(freq[num]){
+                freq[num]++;
+            }else{
+                freq[num]=1;
+            }
+            i++;
+        }
+        const keys=Object.keys(freq);
+        let j=0;
+        while (j < keys.length){
+            let key=keys[j];
+            console.log(key + " appears "+freq[key]+" times");
+            j++;
+        }
+
+
+    </Script>
+    
+</body>
+</html>

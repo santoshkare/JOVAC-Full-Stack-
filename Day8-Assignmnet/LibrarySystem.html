@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+  const library = [
+    { title: "The Alchemist", author: "Paulo Coelho", year: 1988, available: true },
+    { title: "1984", author: "George Orwell", year: 1949, available: true },
+    { title: "To Kill a Mockingbird", author: "Harper Lee", year: 1960, available: false }
+  ];
+
+  function displayAvailableBooks() {
+    console.log("Available Books:");
+    for (let i = 0; i < library.length; i++) {
+      if (library[i].available) {
+        console.log(library[i].title + " by " + library[i].author);
+      }
+    }
+  }
+
+  function borrowBook(title) {
+    for (let i = 0; i < library.length; i++) {
+      if (library[i].title === title && library[i].available) {
+        library[i].available = false;
+        console.log(title + " has been borrowed.");
+        return;
+      }
+    }
+    console.log(title + " is not available.");
+  }
+
+  function addBook(title, author, year) {
+    library.push({ title: title, author: author, year: year, available: true });
+    console.log(title + " has been added to the library.");
+  }
+
+  displayAvailableBooks();
+  borrowBook("1984");
+  addBook("The Hobbit", "J.R.R. Tolkien", 1937);
+  displayAvailableBooks();
+</script>
+
+</body>
+</html>

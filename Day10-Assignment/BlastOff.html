@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function countdown(n){
+            if(n===0){
+                console.log("BLast OFF");
+                return;
+            }
+            console.log(n);
+            setTimeout(()=>countdown(n-1),1000);
+        }
+        countdown(5);
+    </script>
+    
+</body>
+</html>

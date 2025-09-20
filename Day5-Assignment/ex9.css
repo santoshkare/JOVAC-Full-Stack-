@@ -1,0 +1,16 @@
+.btn {
+  position: relative;
+  padding: 10px 20px;
+  background-color: rgb(240, 240, 240);
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: top 0.5s, left 0.5s, box-shadow 1s ease, background-color 1s ease;
+}
+
+.btn:hover {
+  top: 1px;
+  left: 1px;
+  box-shadow: 3px 3px 0px rgb(0, 0, 0);
+  background-color: rgb(255, 111, 111);
+}

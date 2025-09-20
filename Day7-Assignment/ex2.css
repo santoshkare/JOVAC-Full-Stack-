@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    height: 100vh;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+}
+.item{
+    background-color: blue;
+    padding: 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+    min-width: 100px;
+}

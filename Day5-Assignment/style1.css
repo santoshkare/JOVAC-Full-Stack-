@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+.header {
+  background-image: linear-gradient(to right, #1e3c72, #2a5298);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.header h1 {
+  font-size: 3em;
+}
+
+.header p {
+  font-size: 1.2em;
+}
+
+.product-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background-color: #fff;
+}
+
+.product-info img {
+  max-width: 100%;
+  width: 400px;
+  margin: 20px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product-info img:hover {
+  transform: scale(1.05);
+}
+
+.info-text {
+  max-width: 500px;
+  margin: 20px;
+}
+
+.info-text h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 25px;
+  background-color: #2a5298;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #1e3c72;
+}
+
+.features {
+  background-color: #f0f4f8;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.features h2 {
+  margin-bottom: 20px;
+}
+
+.features ul {
+  list-style: none;
+  font-size: 1.1em;
+}
+
+.features li {
+  margin: 10px 0;
+}
+
+.testimonials {
+  padding: 50px 20px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.testimonial {
+  margin: 20px auto;
+  max-width: 600px;
+  background: #f1f1f1;
+  padding: 20px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.testimonial:hover {
+  transform: scale(1.02);
+}
+
+.testimonial span {
+  display: block;
+  margin-top: 10px;
+  color: #555;
+  font-weight: bold;
+}
+
+.footer {
+  background-color: #2a5298;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+  .product-info {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-text h2 {
+    font-size: 1.5em;
+  }
+
+  .header h1 {
+    font-size: 2.2em;
+  }
+}

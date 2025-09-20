@@ -1,0 +1,33 @@
+.container{
+    display: flex;
+    gap: 10px;
+    padding: 10px;
+}
+.iteam{
+    background-color: rgb(255, 0, 0);
+    padding: 20px;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.iteam-1{
+    flex:2;
+    order:2;
+}
+.iteam-2{
+    flex:1;
+    order: 1;
+}
+.iteam-3{
+    flex: 2;
+    order: 3;
+}
+.iteam-4{
+    flex:1 ;
+    order: 4;
+}
+.iteam-5{
+    flex: 2;
+    order: 5;
+}

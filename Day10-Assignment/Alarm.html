@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function setAlarm(time,message){
+            const alarmTime = new Date(time);
+            const now =new Date();
+            const timeDiff = alarmTime - now;
+
+            if(timeDiff <=0){
+                alert("The time is already passed");
+                return;
+            }
+            setTimeout(()=>{
+                alert(message);
+            },timeDiff);
+
+            
+        }
+        const futureTime = new Date(Date.now() + 60000).toString();
+        setAlarm(futureTime)
+    </script>
+</body>
+</html>

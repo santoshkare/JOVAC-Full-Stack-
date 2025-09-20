@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Operators Practice</title>
+
+    <style>
+        
+        .container #myHeader {
+            color: red;
+        }
+
+        
+        div + h3 {
+            color: green;
+        }
+
+        .myText1 + .myText2 {
+            color: orange;
+        }
+
+       
+        .myInput[type="text"],
+        input[type="email"] {
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 id="myHeader">Welcome to CSS Practice</h1>
+    </div>
+
+    <div>This is a div element.</div>
+    <h3>This h3 comes immediately after a div.</h3>
+
+    <p class="myText1">First paragraph</p>
+    <p class="myText2">This paragraph comes right after .myText1</p>
+
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" class="myInput" id="name" name="name"><br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email">
+    </form>
+
+</body>
+</html>

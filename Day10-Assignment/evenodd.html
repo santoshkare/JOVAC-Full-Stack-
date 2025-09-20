@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function iseven(n){
+            if(n<0) return iseven(-n);
+
+                if(n===0) return true;
+                if(n===1) return false;
+
+                return iseven(n-2);
+                
+            
+        }
+        console.log(iseven(41));
+        
+    </script>
+</body>
+</html>
