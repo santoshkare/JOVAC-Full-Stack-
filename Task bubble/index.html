@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Circle Creator Pro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(135deg, #1f1c2c, #928dab);
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      overflow: hidden;
+    }
+
+    .circle {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      animation: pop 0.3s ease-out;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    @keyframes pop {
+      0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 12px 20px;
+      border-radius: 12px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      z-index: 10;
+    }
+
+    .controls button {
+      padding: 10px 20px;
+      background-color: #ffffff22;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .controls button:hover {
+      background-color: #ffffff44;
+    }
+
+    .status {
+      position: fixed;
+      top: 15px;
+      right: 20px;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.15);
+      padding: 8px 15px;
+      border-radius: 8px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="status">
+    Circles: <span id="circle-count">0</span>
+  </div>
+
+  <div class="controls">
+    <button onclick="undo()">Undo (Ctrl+Z)</button>
+    <button onclick="redo()">Redo (Ctrl+Y)</button>
+    <button onclick="reset()">Reset</button>
+  </div>
+
+  <script>
+    const history = [];
+    const redoStack = [];
+    const countDisplay = document.getElementById("circle-count");
+
+    function getRandomColor() {
+      const letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    function updateCount() {
+      countDisplay.innerText = history.length;
+    }
+
+    function createCircle(x, y) {
+      const circle = document.createElement("div");
+      circle.className = "circle";
+      circle.style.left = x + "px";
+      circle.style.top = y + "px";
+      circle.style.backgroundColor = getRandomColor();
+
+      document.body.appendChild(circle);
+      history.push(circle);
+      redoStack.length = 0;
+      updateCount();
+    }
+
+    function undo() {
+      if (history.length > 0) {
+        const last = history.pop();
+        redoStack.push(last);
+        last.remove();
+        updateCount();
+      }
+    }
+
+    function redo() {
+      if (redoStack.length > 0) {
+        const circle = redoStack.pop();
+        document.body.appendChild(circle);
+        history.push(circle);
+        updateCount();
+      }
+    }
+
+    function reset() {
+      while (history.length > 0) {
+        const circle = history.pop();
+        circle.remove();
+      }
+      redoStack.length = 0;
+      updateCount();
+    }
+
+    // Click Listener
+    document.addEventListener("click", (e) => {
+      if (e.target.tagName.toLowerCase() !== "button") {
+        createCircle(e.clientX, e.clientY);
+      }
+    });
+
+    // Touch Support
+    document.addEventListener("touchstart", (e) => {
+      const touch = e.touches[0];
+      createCircle(touch.clientX, touch.clientY);
+    });
+
+    // Ctrl+Z / Ctrl+Y Support
+    document.addEventListener("keydown", (e) => {
+      if (e.ctrlKey && e.key === "z") {
+        undo();
+      }
+      if (e.ctrlKey && e.key === "y") {
+        redo();
+      }
+    });
+  </script>
+</body>
+</html>
